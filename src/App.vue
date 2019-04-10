@@ -1,19 +1,24 @@
 <template>
   <v-app>
     <ToolBar/>
-    <News/>
+    <v-content>
+      <News/>
+    </v-content>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
   import ToolBar from './components/ToolBar'
   import News from './components/News'
+  import Footer from './components/Footer'
 
   export default {
     name: 'App',
     components: {
       ToolBar,
-      News
+      News,
+      Footer
     },
     data() {
       return {
@@ -26,7 +31,7 @@
 
 <style>
  #app {
-   background-color: rgba(85,85,85,1) ;
+   background-color: rgba(100,100,100,1) ;
 
 
  }
