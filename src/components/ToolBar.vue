@@ -7,7 +7,9 @@
     <v-spacer></v-spacer>
     <v-layout justify-space-between>
       <v-icon>stars</v-icon>
-      <v-icon>group</v-icon>
+      <router-link to="/character">
+        <v-icon>group</v-icon>
+      </router-link>
       <v-icon>settings_applications</v-icon>
     </v-layout>
   </v-toolbar>
