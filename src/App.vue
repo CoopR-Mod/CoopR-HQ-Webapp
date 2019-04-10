@@ -1,18 +1,18 @@
 <template>
   <v-app>
-    <Banner/>
+    <ToolBar/>
     <News/>
   </v-app>
 </template>
 
 <script>
-  import Banner from './components/Banner'
+  import ToolBar from './components/ToolBar'
   import News from './components/News'
 
   export default {
     name: 'App',
     components: {
-      Banner,
+      ToolBar,
       News
     },
     data() {
