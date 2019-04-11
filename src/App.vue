@@ -2,30 +2,25 @@
   <v-app>
     <ToolBar/>
     <v-content>
-      <News/>
+      <router-view></router-view>
     </v-content>
     <Footer/>
   </v-app>
 </template>
 
 <script>
-  import ToolBar from './components/ToolBar'
-  import News from './components/News'
-  import Footer from './components/Footer'
+  import {Vue, Component, Prop} from 'vue-property-decorator';
+  import ToolBar from './components/ToolBar';
+  import News from './components/News';
+  import Footer from './components/Footer';
 
-  export default {
-    name: 'App',
+  @Component({
     components: {
-      ToolBar,
-      News,
-      Footer
+      ToolBar, News, Footer
     },
-    data() {
-      return {
-        //
-      }
-    }
-  }
+  })
+  export default class App extends Vue {}
+
 </script>
 
 

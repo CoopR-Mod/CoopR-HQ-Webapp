@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: "404"
+    name: "NotFound"
   }
 </script>
 
