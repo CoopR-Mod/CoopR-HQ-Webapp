@@ -19,9 +19,10 @@
 </template>
 
 <script>
-  export default {
-    name: "ToolBar"
-  }
+  import {Component, Prop, Vue} from "vue-property-decorator";
+
+  @Component({})
+  export default class ToolBar extends Vue { }
 </script>
 
 <style scoped>
