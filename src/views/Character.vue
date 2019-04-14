@@ -20,11 +20,11 @@
       <v-container>
         <v-layout>
           <v-flex xs12>
-            <v-card color="rgba(75,75,75,1)">
+            <v-card dark color="rgba(75,75,75,1)">
               <v-card-title><h4>Details</h4></v-card-title>
               <v-divider></v-divider>
               <v-list dense>
-                <v-list-tile v-for="(value,key) in character" color="rgba(85,85,85,1)">
+                <v-list-tile v-for="(value,key) in character" >
                   <v-list-tile-content>{{key}}</v-list-tile-content>
                   <v-list-tile-content class="align-end">{{value}}</v-list-tile-content>
                 </v-list-tile>
