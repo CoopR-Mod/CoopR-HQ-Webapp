@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Character from './views/Character.vue';
 import NotFound from './views/NotFound.vue';
-import News from '@/components/News.vue';
+import News from '@/views/News.vue';
 
 Vue.use(Router);
 

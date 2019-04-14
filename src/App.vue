@@ -11,7 +11,7 @@
 <script>
   import {Vue, Component, Prop} from 'vue-property-decorator';
   import ToolBar from './components/ToolBar';
-  import News from './components/News';
+  import News from './views/News';
   import Footer from './components/Footer';
 
   @Component({
