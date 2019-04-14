@@ -2,45 +2,56 @@
   <v-tabs centered color="rgba(75,75,75,1)" dark icons-and-text>
     <v-tabs-slider color="yellow"></v-tabs-slider>
 
-    <v-tab href="#tab-1">
-      Sgt. Spinelli
-      <v-icon>account_box</v-icon>
-    </v-tab>
-    <v-tab href="#tab-2">
-      Empty
-      <v-icon>account_box</v-icon>
-    </v-tab>
-    <v-tab href="#tab-3">
-      Empty
+    <v-tab v-for="(character, index) in characters" :href="'#tab-' + index">
+      {{character.name}}
       <v-icon>account_box</v-icon>
     </v-tab>
 
-    <v-tab-item v-for="i in 3" :key="i" :value="'tab-' + i">
-      <v-layout column> 
-        <v-container>
+    <v-tab-item v-for="(character, index) in characters" :key="index" :value="'tab-' + index">
+      <v-container>
+        <v-layout>
           <v-flex xs12>
-            <v-avatar size="150" tile="true" color="rgba(85,85,85,1)">
+            <v-avatar size="150" color="rgba(85,85,85,1)">
               <v-icon size="50">perm_identity</v-icon>
             </v-avatar>
           </v-flex>
-        </v-container>
-        <v-container>
-          <v-flex xs8>
-            <v-card flat>
-              <v-card-text>Content</v-card-text>
+        </v-layout>
+      </v-container>
+      <v-container>
+        <v-layout>
+          <v-flex xs12>
+            <v-card color="rgba(75,75,75,1)">
+              <v-card-title><h4>Details</h4></v-card-title>
+              <v-divider></v-divider>
+              <v-list dense>
+                <v-list-tile v-for="(value,key) in character" color="rgba(85,85,85,1)">
+                  <v-list-tile-content>{{key}}</v-list-tile-content>
+                  <v-list-tile-content class="align-end">{{value}}</v-list-tile-content>
+                </v-list-tile>
+              </v-list>
             </v-card>
           </v-flex>
-        </v-container>
-      </v-layout>
+        </v-layout>
+      </v-container>
     </v-tab-item>
   </v-tabs>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+    import {Component, Prop, Vue} from "vue-property-decorator";
 
-@Component({
-  components: {
-  },
-})
-export default class Character extends Vue {}
+    @Component
+    export default class Character extends Vue {
+        characters = [
+            {
+                name: "Sgt.Spinelli",
+                class: "Group Leader",
+                reputation: 100
+            },
+            {
+                name: "Mr.Nice",
+                class: "Medic",
+                reputation: 50
+            }
+        ];
+    }
 </script>
