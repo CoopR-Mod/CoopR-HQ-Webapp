@@ -1,4 +1,5 @@
 <template>
+  <v-container>
   <v-tab :href="'#tab-' + index">
     {{character.name}}
     <v-icon>{{icon}}</v-icon>
@@ -31,6 +32,7 @@
       </v-layout>
     </v-container>
   </v-tab-item>
+  <v-container>
 
 </template>
 

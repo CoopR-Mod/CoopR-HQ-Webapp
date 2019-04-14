@@ -44,8 +44,9 @@
 </template>
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
+import Character from "@/components/Character.vue";
 
-@Component
+@Component({Character})
 export default class Characters extends Vue {
     
     private empty: object = {
