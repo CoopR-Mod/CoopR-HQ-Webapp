@@ -6,6 +6,9 @@
     <v-spacer></v-spacer>
     <v-spacer></v-spacer>
     <v-layout justify-space-between>
+      <router-link to="/">
+        <v-icon>announcement</v-icon>
+      </router-link>
       <v-icon>stars</v-icon>
       <router-link to="/character">
         <v-icon>group</v-icon>
