@@ -9,9 +9,9 @@
 
     <v-tab-item v-for="(character, index) in characters" :key="index" :value="'tab-' + index">
       <v-container>
-        <v-layout>
+        <v-layout column align-center >
           <v-flex xs12>
-            <v-avatar size="150" color="rgba(85,85,85,1)">
+            <v-avatar class="align-end" size="150" color="rgba(85,85,85,1)">
               <v-icon size="50">perm_identity</v-icon>
             </v-avatar>
           </v-flex>
