@@ -3,8 +3,14 @@
     <v-tabs-slider color="yellow"></v-tabs-slider>
 
     <v-tab v-for="(character, index) in characters" :href="'#tab-' + index">
-      {{character.name}}
-      <v-icon>account_box</v-icon>
+      <template v-if="!emptyObject(character)">
+        {{character.name}}
+        <v-icon>account_box</v-icon>
+      </template>
+      <template v-else>
+        {{empty.name}}
+        <v-icon>far fa-question-circle</v-icon>
+      </template>
     </v-tab>
 
     <v-tab-item v-for="(character, index) in characters" :key="index" :value="'tab-' + index">
@@ -39,19 +45,30 @@
 <script lang="ts">
     import {Component, Prop, Vue} from "vue-property-decorator";
 
-    @Component
-    export default class Character extends Vue {
-        characters = [
-            {
-                name: "Sgt.Spinelli",
-                class: "Group Leader",
-                reputation: 100
-            },
-            {
-                name: "Mr.Nice",
-                class: "Medic",
-                reputation: 50
-            }
-        ];
+@Component
+export default class Character extends Vue {
+    
+    private empty: object = {
+        name: "No Character"
+    };
+    
+    private characters: array = [
+        {
+            name: "Sgt.Spinelli",
+            class: "Group Leader",
+            reputation: 100
+        },
+        {
+            name: "Mr.Nice",
+            class: "Medic",
+            reputation: 50
+        },
+        {
+        }
+    ];
+    private emptyObject(obj): boolean {
+        return Object.entries(obj).length === 0 && obj.constructor === Object
     }
+
+}
 </script>
