@@ -10,7 +10,7 @@
         <v-icon>announcement</v-icon>
       </router-link>
       <v-icon>stars</v-icon>
-      <router-link to="/character">
+      <router-link to="/characters">
         <v-icon>group</v-icon>
       </router-link>
       <v-icon>settings_applications</v-icon>

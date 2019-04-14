@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Character from './views/Character.vue';
+import Characters from './views/Characters.vue';
 import NotFound from './views/NotFound.vue';
 import News from '@/views/News.vue';
 
@@ -10,7 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'News',
+      name: 'news',
       component: News,
     },
     {
@@ -19,9 +19,9 @@ export default new Router({
       component: NotFound,
     },
     {
-      path: '/character',
-      name: 'character',
-      component: Character,
+      path: '/characters',
+      name: 'characters',
+      component: Characters,
     }
   ],
 });
