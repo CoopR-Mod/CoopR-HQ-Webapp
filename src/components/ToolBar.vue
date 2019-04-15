@@ -1,7 +1,7 @@
 <template>
   <v-toolbar app dark color="rgba(75,75,75,1)">
     <v-avatar color="rgba(85,85,85,1)">
-      <router-link to="/user">
+      <router-link class="no-underline" @click.stop="drawer = !drawer" to="/user">
         <v-icon>perm_identity</v-icon>
       </router-link>
     </v-avatar>
@@ -20,7 +20,7 @@
   </v-toolbar>
 </template>
 
-<script>
+<script lang="ts">
   import {Component, Prop, Vue} from "vue-property-decorator";
 
   @Component({})
@@ -28,5 +28,7 @@
 </script>
 
 <style scoped>
-
+  .no-underline {
+    text-decoration: none;
+  }
 </style>

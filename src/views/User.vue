@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-md>
-    <v-layout>
+    <v-layout class="pb-5">
       <v-flex xs6>
         <v-avatar size="150" color="rgba(85,85,85,1)">
           <v-icon size="60">perm_identity</v-icon>
@@ -27,35 +27,37 @@
         </v-card>
       </v-flex>
     </v-layout>
-    <v-layout row class="py-5">
-      <v-flex xs3>
-        <v-layout column align-start>
-          <v-card-title>edit</v-card-title>
-          <v-card-title>account_circle</v-card-title>
-          <v-card-title>alarm</v-card-title>
-        </v-layout>
-      </v-flex>
-      <v-flex xs6>
-        <v-layout column align-center>
-          <v-btn fab color="rgba(150,150,150,1)">
-            <v-icon>edit</v-icon>
-          </v-btn>
-          <v-btn fab color="rgba(150,150,150,1)">
+    <v-layout row class="pt-5">
+      <v-flex xs12>
+        <v-layout column align-center justify-space-between>
+          <v-btn fab large color="rgba(150,150,150,1)" @click.stop="drawer = !drawer">
             <v-icon>account_circle</v-icon>
           </v-btn>
-          <v-btn fab color="rgba(150,150,150,1)">
-            <v-icon>alarm</v-icon>
+          <v-btn fab large color="rgba(150,150,150,1)">
+            <v-icon>group</v-icon>
           </v-btn>
-        </v-layout>
-      </v-flex>
-      <v-flex xs3>
-        <v-layout column align-end>
-          <v-card-title>edit</v-card-title>
-          <v-card-title>account_circle</v-card-title>
-          <v-card-title>alarm</v-card-title>
+          <v-btn fab large color="rgba(150,150,150,1)">
+            <v-icon>fas fa-shield-alt</v-icon>
+          </v-btn>
         </v-layout>
       </v-flex>
     </v-layout>
+    <v-navigation-drawer dark floating v-model="drawer" mini-variant absolute temporary >
+
+      <v-list class="pt-0" dense>
+        <v-divider></v-divider>
+
+        <v-list-tile v-for="item in items" :key="item.title" @click="">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
   </v-container>
 </template>
 
@@ -78,6 +80,13 @@
             },
             {}
         ];
+
+        private items: object[] = [
+            {title: "Home", icon: "dashboard"},
+            {title: "About", icon: "question_answer"}
+        ];
+
+        private drawer = null;
 
     }
 
