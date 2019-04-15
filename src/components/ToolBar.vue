@@ -1,7 +1,9 @@
 <template>
   <v-toolbar app dark color="rgba(75,75,75,1)">
     <v-avatar color="rgba(85,85,85,1)">
-      <v-icon>perm_identity</v-icon>
+      <router-link to="/user">
+        <v-icon>perm_identity</v-icon>
+      </router-link>
     </v-avatar>
     <v-spacer></v-spacer>
     <v-spacer></v-spacer>
