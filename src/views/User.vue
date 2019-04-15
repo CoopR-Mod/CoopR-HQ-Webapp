@@ -28,7 +28,24 @@
       </v-flex>
     </v-layout>
     <v-layout row class="pt-5">
-      <v-flex xs12>
+      <v-flex xs2>
+        <v-navigation-drawer height="100%"  class="pr-3 elevation-0" hide-overlay dark floating v-model="drawer" mini-variant>
+
+          <v-list class="pt-0" dense>
+
+            <v-list-tile v-for="item in items" :key="item.title" @click="">
+              <v-list-tile-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-tile-action>
+
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-navigation-drawer>
+      </v-flex>
+      <v-flex xs10>
         <v-layout column align-center justify-space-between>
           <v-btn fab large color="rgba(150,150,150,1)" @click.stop="drawer = !drawer">
             <v-icon>account_circle</v-icon>
@@ -42,22 +59,6 @@
         </v-layout>
       </v-flex>
     </v-layout>
-    <v-navigation-drawer dark floating v-model="drawer" mini-variant absolute temporary >
-
-      <v-list class="pt-0" dense>
-        <v-divider></v-divider>
-
-        <v-list-tile v-for="item in items" :key="item.title" @click="">
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
   </v-container>
 </template>
 
@@ -82,6 +83,8 @@
         ];
 
         private items: object[] = [
+            {title: "Home", icon: "dashboard"},
+            {title: "About", icon: "question_answer"},
             {title: "Home", icon: "dashboard"},
             {title: "About", icon: "question_answer"}
         ];
