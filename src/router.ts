@@ -4,6 +4,7 @@ import Characters from './views/Characters.vue';
 import NotFound from './views/NotFound.vue';
 import News from '@/views/News.vue';
 import User from '@/views/User.vue';
+import UserDetails from "@/views/UserDetails.vue";
 
 Vue.use(Router);
 
@@ -13,6 +14,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: User,
+    },
+    {
+      path: '/userdetails',
+      name: 'userdetails',
+      component: UserDetails,
     },
     {
       path: '/',

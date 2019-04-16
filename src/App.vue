@@ -26,7 +26,7 @@
 
 <style>
  #app {
-   background-color: rgba(100,100,100,1) ;
+   background-color: rgba(130,130,130,1) ;
 
 
  }

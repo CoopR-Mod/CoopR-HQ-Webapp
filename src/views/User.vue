@@ -22,12 +22,16 @@
     <v-layout row class="pt-3">
       <v-flex xs12>
         <v-layout column align-center justify-space-between>
-          <v-btn fab large color="rgba(150,150,150,1)">
-            <v-icon>account_circle</v-icon>
-          </v-btn>
-          <v-btn fab large color="rgba(150,150,150,1)">
-            <v-icon>group</v-icon>
-          </v-btn>
+          <router-link class="no-underline" to="/userdetails">
+            <v-btn fab large color="rgba(150,150,150,1)">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          </router-link>
+          <router-link class="no-underline" to="/characters">
+            <v-btn fab large color="rgba(150,150,150,1)">
+              <v-icon>group</v-icon>
+            </v-btn>
+          </router-link>
           <v-btn fab large color="rgba(150,150,150,1)">
             <v-icon>fas fa-shield-alt</v-icon>
           </v-btn>
@@ -67,5 +71,7 @@
 </script>
 
 <style scoped>
-
+  .no-underline {
+    text-decoration: none;
+  }
 </style>
