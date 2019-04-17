@@ -4,10 +4,15 @@
       <template v-for="social in socialLinks">
         <v-flex xs2 text-xs-center>
           <a class="no-underline" target="_blank" :href="social.url">
-            <v-icon class="pt-1" size="35px">{{ social.icon }}</v-icon>
+            <v-icon class="pt-2" size="2em">{{ social.icon }}</v-icon>
           </a>
         </v-flex>
       </template>
+      <v-flex xs2 text-xs-center>
+        <router-link class="no-underline" to="/discord">
+          <v-icon class="pt-2" size="2em">fab fa-discord</v-icon>
+        </router-link>
+      </v-flex>
       <v-flex xs12 class="pl-2"> alpha-v{{version}}-{{build}} </v-flex>
     </v-layout>
   </v-footer>
