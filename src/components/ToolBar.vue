@@ -14,7 +14,7 @@
         </router-link>
       </v-flex>
       <v-flex xs2 text-xs-center>
-        <router-link class="no-underline" to="/">
+        <router-link class="no-underline" to="/characters">
           <v-icon large>group</v-icon>
         </router-link>
       </v-flex>
