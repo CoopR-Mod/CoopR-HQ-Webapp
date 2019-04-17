@@ -1,10 +1,10 @@
 <template>
-  <v-toolbar app dark color="rgba(75,75,75,1)">
-    <v-avatar color="rgba(85,85,85,1)">
-      <router-link class="no-underline" @click.stop="drawer = !drawer" to="/user">
+  <v-toolbar v-ripple app dark color="rgba(75,75,75,1)">
+    <router-link class="no-underline" @click.stop="drawer = !drawer" to="/user">
+      <v-avatar v-ripple color="rgba(85,85,85,1)">
         <v-icon>perm_identity</v-icon>
-      </router-link>
-    </v-avatar>
+      </v-avatar>
+    </router-link>
     <v-spacer></v-spacer>
     <v-spacer></v-spacer>
     <v-layout justify-space-between>
@@ -21,10 +21,11 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from "vue-property-decorator";
+    import {Component, Vue} from "vue-property-decorator";
 
-  @Component({})
-  export default class ToolBar extends Vue { }
+    @Component({})
+    export default class ToolBar extends Vue {
+    }
 </script>
 
 <style scoped>
