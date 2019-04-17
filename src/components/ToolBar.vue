@@ -1,6 +1,6 @@
 <template>
   <v-toolbar app dark color="rgba(75,75,75,1)">
-    <v-layout row align-center>
+    <v-layout row align-center justify-space-around>
       <v-flex xs4>
         <router-link class="no-underline" to="/user">
           <v-avatar v-ripple color="rgba(85,85,85,1)">
@@ -8,14 +8,19 @@
           </v-avatar>
         </router-link>
       </v-flex>
-      <v-flex xs4 text-xs-center>
+      <v-flex xs2 text-xs-center>
         <router-link class="no-underline" to="/">
           <v-icon large>announcement</v-icon>
         </router-link>
       </v-flex>
-      <v-flex xs4 text-xs-center>
-        <router-link class="no-underline" to="/characters">
+      <v-flex xs2 text-xs-center>
+        <router-link class="no-underline" to="/">
           <v-icon large>group</v-icon>
+        </router-link>
+      </v-flex>
+      <v-flex xs2 text-xs-center>
+        <router-link class="no-underline" to="/discord">
+          <v-icon large>fab fa-discord</v-icon>
         </router-link>
       </v-flex>
     </v-layout>

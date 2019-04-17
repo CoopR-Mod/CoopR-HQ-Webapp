@@ -6,6 +6,7 @@ import News from '@/views/News.vue';
 import User from '@/views/User.vue';
 import UserDetails from "@/views/UserDetails.vue";
 import Loadout from "@/views/Loadout.vue";
+import DiscordChat from "@/views/DiscordChat.vue";
 
 Vue.use(Router);
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/loadout',
       name: 'loadout',
       component: Loadout,
+    },
+    {
+      path: '/discord',
+      name: 'discord',
+      component: DiscordChat,
     }
   ],
 });
