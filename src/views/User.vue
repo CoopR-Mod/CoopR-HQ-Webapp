@@ -4,7 +4,7 @@
       <v-flex xs12>
         <v-layout class="pt-2 mb-2" justify-center>
           <v-avatar size="150" color="rgba(85,85,85,1)">
-            <v-icon size="60">perm_identity</v-icon>
+            <v-img :src="require('../assets/bruders.jpg')" ></v-img>
           </v-avatar>
         </v-layout>
       </v-flex>
