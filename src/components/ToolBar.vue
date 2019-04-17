@@ -33,5 +33,6 @@
 <style scoped>
   .no-underline {
     text-decoration: none;
+
   }
 </style>
