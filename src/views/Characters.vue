@@ -13,7 +13,7 @@
           <v-layout column align-center>
             <v-flex xs12>
               <v-avatar class="align-end" size="150" color="rgba(85,85,85,1)">
-                <v-icon size="50">perm_identity</v-icon>
+                <v-img :src="require('../assets/' + classIcons[character.class])" ></v-img>
               </v-avatar>
             </v-flex>
           </v-layout>
@@ -27,8 +27,8 @@
             </v-flex>
             <v-flex xs12>
               <v-list dense dark class="forced-grey">
-                <v-list-tile  v-for="(value,key) in character">
-                  <v-list-tile-content >{{key}}</v-list-tile-content>
+                <v-list-tile v-for="(value,key) in character">
+                  <v-list-tile-content>{{key}}</v-list-tile-content>
                   <v-list-tile-content>{{value}}</v-list-tile-content>
                 </v-list-tile>
               </v-list>
@@ -70,15 +70,24 @@
             name: "empty"
         };
 
+        private classIcons: object = {
+            "leader" : "group-leader-256-white.png",
+            "marksman" : "designated-marksman-256-white.png",
+            "engineer" : "engineer-256-white.png",
+            "medic" : "medic-256-white.png",
+            "lmg" : "mg-gunner-256-white.png",
+            "radioman" : "radioman-256-white.png",
+        };
+
         private characters: object[] = [
             {
                 name: "Sgt.Spinelli",
-                class: "Group Leader",
+                class: "leader",
                 reputation: 100
             },
             {
                 name: "Mr.Nice",
-                class: "Medic",
+                class: "medic",
                 reputation: 50
             },
             {}
@@ -93,6 +102,6 @@
 
 <style scoped>
   .forced-grey {
-    background-color: rgba(85,85,85,1)
+    background-color: rgba(85, 85, 85, 1)
   }
 </style>
