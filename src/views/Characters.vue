@@ -35,6 +35,7 @@
             </v-flex>
           </v-layout>
         </v-container>
+        <character-menu></character-menu>
       </template>
       <template v-else>
         <v-container>
@@ -49,12 +50,13 @@
         <v-container>
           <v-layout dark column align-center>
             <v-flex xs12>
-              <v-btn dark color="rgba(75,75,75,1)">Create New Character</v-btn>
+              <router-link class="no-underline" to="/newcharacter">
+                <v-btn dark color="rgba(75,75,75,1)">Create New Character</v-btn>
+              </router-link>
             </v-flex>
           </v-layout>
         </v-container>
       </template>
-      <character-menu></character-menu>
     </v-tab-item>
   </v-tabs>
 </template>
@@ -71,12 +73,12 @@
         };
 
         private classIcons: object = {
-            "leader" : "group-leader-256-white.png",
-            "marksman" : "designated-marksman-256-white.png",
-            "engineer" : "engineer-256-white.png",
-            "medic" : "medic-256-white.png",
-            "lmg" : "mg-gunner-256-white.png",
-            "radioman" : "radioman-256-white.png",
+            "leader": "group-leader-256-white.png",
+            "marksman": "designated-marksman-256-white.png",
+            "engineer": "engineer-256-white.png",
+            "medic": "medic-256-white.png",
+            "lmg": "mg-gunner-256-white.png",
+            "radioman": "radioman-256-white.png",
         };
 
         private characters: object[] = [
@@ -101,6 +103,10 @@
 </script>
 
 <style scoped>
+  .no-underline {
+    text-decoration: none;
+
+  }
   .forced-grey {
     background-color: rgba(85, 85, 85, 1)
   }

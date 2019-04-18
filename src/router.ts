@@ -7,6 +7,7 @@ import User from '@/views/User.vue';
 import UserDetails from "@/views/UserDetails.vue";
 import Loadout from "@/views/Loadout.vue";
 import DiscordChat from "@/views/DiscordChat.vue";
+import NewCharacter from "@/views/NewCharacter.vue";
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/characters',
       name: 'characters',
       component: Characters,
+    },
+    {
+      path: '/newcharacter',
+      name: 'newcharacter',
+      component: NewCharacter,
     },
     {
       path: '/loadout',

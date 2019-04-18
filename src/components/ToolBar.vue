@@ -27,6 +27,7 @@
 
     @Component({})
     export default class ToolBar extends Vue {
+
     }
 </script>
 
