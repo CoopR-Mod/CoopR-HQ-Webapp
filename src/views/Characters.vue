@@ -82,7 +82,7 @@
         private characters: object[] = [
             {
                 name: "Sgt.Spinelli",
-                class: "leader",
+                class: "radioman",
                 reputation: 100
             },
             {

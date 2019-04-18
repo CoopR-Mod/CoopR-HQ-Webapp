@@ -10,12 +10,12 @@
       </v-flex>
       <v-flex xs2 text-xs-center>
         <router-link class="no-underline" to="/">
-          <v-icon large>announcement</v-icon>
+          <v-icon large>home</v-icon>
         </router-link>
       </v-flex>
       <v-flex xs2 text-xs-center>
         <router-link class="no-underline" to="/characters">
-          <v-icon large>group</v-icon>
+          <v-img :src="require('../assets/group-leader-256-white.png')" ></v-img>
         </router-link>
       </v-flex>
     </v-layout>
