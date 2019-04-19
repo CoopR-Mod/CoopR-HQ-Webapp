@@ -1,4 +1,5 @@
 <template>
+  {{characterForId()}}
   <v-tabs centered color="rgba(75,75,75,1)" dark icons-and-text>
     <v-tabs-slider color="white"></v-tabs-slider>
 
@@ -27,7 +28,7 @@
             </v-flex>
             <v-flex xs12>
               <v-list dense dark class="forced-grey">
-                <v-list-tile v-for="(value,key) in character">
+                <v-list-tile v-for="(value,key) in characters">
                   <v-list-tile-content>{{key}}</v-list-tile-content>
                   <v-list-tile-content>{{value}}</v-list-tile-content>
                 </v-list-tile>
@@ -61,25 +62,41 @@
   </v-tabs>
 </template>
 <script lang="ts">
-    import {Component, Vue} from "vue-property-decorator";
+    import {Component, Prop, Vue} from "vue-property-decorator";
     import CharacterTab from "@/components/CharacterTab.vue";
     import CharacterMenu from "@/components/CharacterMenu.vue";
+    import axios from 'axios';
 
     @Component({components: {CharacterTab, CharacterMenu}})
     export default class Characters extends Vue {
+
+        //@Prop(Number) private characterID!: number;
+        private characterID: number = 4607255831;
 
         private empty: object = {
             name: "empty"
         };
 
         private classIcons: object = {
-            "leader": "group-leader-256-white.png",
-            "marksman": "designated-marksman-256-white.png",
-            "engineer": "engineer-256-white.png",
-            "medic": "medic-256-white.png",
-            "lmg": "mg-gunner-256-white.png",
-            "radioman": "radioman-256-white.png",
+            "LEADER": "group-leader-256-white.png",
+            "DMR": "designated-marksman-256-white.png",
+            "ENGINEER": "engineer-256-white.png",
+            "MEDIC": "medic-256-white.png",
+            "MACHINEGUNNER": "mg-gunner-256-white.png",
+            "RADIOMAN": "radioman-256-white.png",
         };
+
+        private characterForId() {
+            axios.get('http://localhost:80/api/v0.1/character/fetch/' + this.characterID)
+                .then( response => {
+                    console.log(response);
+                    this.characters = [response.data];
+                })
+                .catch(error => {
+                    this.characters = [{}];
+                    console.log(error);
+                });
+        }
 
         private characters: object[] = [
             {
