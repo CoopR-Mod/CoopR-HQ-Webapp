@@ -24,27 +24,70 @@
       </v-layout>
     </v-item-group>
 
+    <v-layout class="pt-4" row wrap>
+      <v-flex xs12>
+        <v-card dark>
+          <v-card-title class="title justify-center"><strong>Character Details</strong></v-card-title>
+        </v-card>
+      </v-flex>
+      <v-flex xs12>
+    <v-text-field
+      v-model="name"
+      :counter="10"
+      label="Name"
+      required
+    ></v-text-field>
+    </v-flex>
+      <v-flex xs12>
+    <v-text-field
+      v-model="email"
+      label="E-mail"
+      required
+    ></v-text-field>
+    </v-flex>
+      <v-flex xs12>
+    <v-checkbox
+      v-model="checkbox"
+      value="1"
+      label="Option"
+      type="checkbox"
+      required
+    ></v-checkbox>
+    </v-flex>
+
+    <v-flex xs6 class="text-xs-center">
+      <v-btn dark @click="submit">submit</v-btn>
+    </v-flex>
+    <v-flex xs6 class="text-xs-center">
+      <v-btn dark @click="clear">clear</v-btn>
+    </v-flex>
+  </v-layout>
+
   </v-container>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
 
-    @Component({components: {}})
-    export default class NewCharacter extends Vue {
-
-        private toggle: boolean = false;
-
-        private classIcons: object = {
-            "leader": "group-leader-256-white.png",
-            "marksman": "designated-marksman-256-white.png",
-            "engineer": "engineer-256-white.png",
-            "medic": "medic-256-white.png",
-            "lmg": "mg-gunner-256-white.png",
-            "radioman": "radioman-256-white.png"
-        };
-
-    }
+@Component({components: {}})
+export default class NewCharacter extends Vue {
+    
+    private toggle: boolean = false;
+    
+    private classIcons: object = {
+        "leader": "group-leader-256-white.png",
+        "marksman": "designated-marksman-256-white.png",
+        "engineer": "engineer-256-white.png",
+        "medic": "medic-256-white.png",
+        "lmg": "mg-gunner-256-white.png",
+        "radioman": "radioman-256-white.png"
+    };
+    
+    private name: string = "";
+    private email: string = "";
+    private checkbox: boolean = false;
+    
+}
 
 </script>
 
