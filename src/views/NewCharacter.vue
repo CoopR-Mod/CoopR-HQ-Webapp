@@ -3,13 +3,13 @@
     <v-layout row>
       <v-flex xs12>
         <v-card dark>
-          <v-card-title class="title justify-center"><strong>Select Class</strong></v-card-title>
+          <v-card-title class="title justify-center"><strong>Select Role</strong></v-card-title>
         </v-card>
       </v-flex>
     </v-layout>
     <v-item-group>
       <v-layout wrap class="pt-1">
-        <v-flex xs4 lg2 v-for="(value, key) in classIcons">
+        <v-flex xs4 lg2 v-for="(value, key) in roleIcons">
           <v-item>
             <v-card dark slot-scope="{active, toggle}"
                     :color="active ? 'primary' : ''"
@@ -38,28 +38,8 @@
       required
     ></v-text-field>
     </v-flex>
-      <v-flex xs12>
-    <v-text-field
-      v-model="email"
-      label="E-mail"
-      required
-    ></v-text-field>
-    </v-flex>
-      <v-flex xs12>
-    <v-checkbox
-      v-model="checkbox"
-      value="1"
-      label="Option"
-      type="checkbox"
-      required
-    ></v-checkbox>
-    </v-flex>
-
-    <v-flex xs6 class="text-xs-center">
-      <v-btn dark @click="submit">submit</v-btn>
-    </v-flex>
-    <v-flex xs6 class="text-xs-center">
-      <v-btn dark @click="clear">clear</v-btn>
+    <v-flex xs12 class="text-xs-center">
+      <v-btn dark @click="submit">Create</v-btn>
     </v-flex>
   </v-layout>
 
@@ -74,7 +54,7 @@ export default class NewCharacter extends Vue {
     
     private toggle: boolean = false;
     
-    private classIcons: object = {
+    private roleIcons: object = {
         "leader": "group-leader-256-white.png",
         "marksman": "designated-marksman-256-white.png",
         "engineer": "engineer-256-white.png",
