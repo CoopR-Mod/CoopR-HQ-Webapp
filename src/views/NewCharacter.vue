@@ -3,7 +3,30 @@
     <v-layout row>
       <v-flex xs12>
         <v-card dark>
-          <v-card-title class="title justify-center"><strong>Select Role</strong></v-card-title>
+          <v-card-title class="title justify-center"><strong>Role</strong></v-card-title>
+        </v-card>
+      </v-flex>
+    </v-layout>
+    <v-item-group>
+      <v-layout wrap class="pt-1">
+        <v-flex xs4 lg2 v-for="(value, key) in roleIcons">
+          <v-item>
+            <v-card dark slot-scope="{active, toggle}"
+                    :color="active ? 'primary' : ''"
+                    @click="toggle"
+            >
+              <v-card-title class="justify-center">
+                <v-img :src="require('../assets/' + value)"></v-img>
+              </v-card-title>
+            </v-card>
+          </v-item>
+        </v-flex>
+      </v-layout>
+    </v-item-group>
+    <v-layout row class="pt-3">
+      <v-flex xs12>
+        <v-card dark>
+          <v-card-title class="title justify-center"><strong>Traits</strong></v-card-title>
         </v-card>
       </v-flex>
     </v-layout>
@@ -25,11 +48,6 @@
     </v-item-group>
 
     <v-layout class="pt-4" row wrap>
-      <v-flex xs12>
-        <v-card dark>
-          <v-card-title class="title justify-center"><strong>Character Details</strong></v-card-title>
-        </v-card>
-      </v-flex>
       <v-flex xs12>
     <v-text-field
       v-model="name"
