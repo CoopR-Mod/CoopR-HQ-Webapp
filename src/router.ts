@@ -4,10 +4,12 @@ import Characters from './views/Characters.vue';
 import NotFound from './views/NotFound.vue';
 import News from '@/views/News.vue';
 import User from '@/views/User.vue';
-import UserDetails from "@/views/UserDetails.vue";
-import Loadout from "@/views/Loadout.vue";
-import DiscordChat from "@/views/DiscordChat.vue";
-import NewCharacter from "@/views/NewCharacter.vue";
+import UserDetails from '@/views/UserDetails.vue';
+import Loadout from '@/views/Loadout.vue';
+import DiscordChat from '@/views/DiscordChat.vue';
+import NewCharacter from '@/views/NewCharacter.vue';
+import Login from '@/views/Login.vue';
+import Store from '@/store';
 
 Vue.use(Router);
 
@@ -16,7 +18,18 @@ export default new Router({
     {
       path: '/user',
       name: 'user',
+      beforeEnter: (to, from, next) => {
+        const user = Store.state.user;
+        if (typeof user === 'undefined') {
+          next('/login');
+        }
+      },
       component: User,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
     },
     {
       path: '/userdetails',
@@ -36,6 +49,12 @@ export default new Router({
     {
       path: '/characters',
       name: 'characters',
+      beforeEnter: (to, from, next) => {
+        const user = Store.state.user;
+        if (typeof user === 'undefined') {
+          next('/login');
+        }
+      },
       component: Characters,
     },
     {
@@ -52,6 +71,6 @@ export default new Router({
       path: '/discord',
       name: 'discord',
       component: DiscordChat,
-    }
+    },
   ],
 });
