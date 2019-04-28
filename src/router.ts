@@ -22,6 +22,8 @@ export default new Router({
         const user = Store.state.user;
         if (typeof user === 'undefined') {
           next('/login');
+        } else {
+          next();
         }
       },
       component: User,
@@ -53,6 +55,8 @@ export default new Router({
         const user = Store.state.user;
         if (typeof user === 'undefined') {
           next('/login');
+        } else {
+          next();
         }
       },
       component: Characters,

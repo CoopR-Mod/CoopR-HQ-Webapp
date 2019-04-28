@@ -1,5 +1,4 @@
 <template>
-  {{characterForId()}}
   <v-tabs centered color="rgba(75,75,75,1)" dark icons-and-text>
     <v-tabs-slider color="white"></v-tabs-slider>
 
@@ -14,7 +13,7 @@
           <v-layout column align-center>
             <v-flex xs12>
               <v-avatar class="align-end" size="150" color="rgba(85,85,85,1)">
-                <v-img :src="require('../assets/' + classIcons[character.class])" ></v-img>
+                <v-img :src="require('../assets/' + classIcons[character.role])" ></v-img>
               </v-avatar>
             </v-flex>
           </v-layout>
@@ -28,9 +27,21 @@
             </v-flex>
             <v-flex xs12>
               <v-list dense dark class="forced-grey">
-                <v-list-tile v-for="(value,key) in characters">
-                  <v-list-tile-content>{{key}}</v-list-tile-content>
-                  <v-list-tile-content>{{value}}</v-list-tile-content>
+                <v-list-tile>
+                  <v-list-tile-content>UID</v-list-tile-content>
+                  <v-list-tile-content>{{character.uid}}</v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile>
+                  <v-list-tile-content>Name</v-list-tile-content>
+                  <v-list-tile-content>{{character.name}}</v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile>
+                  <v-list-tile-content>Role</v-list-tile-content>
+                  <v-list-tile-content>{{character.role}}</v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile>
+                  <v-list-tile-content>Reputation</v-list-tile-content>
+                  <v-list-tile-content>{{character.reputation}}</v-list-tile-content>
                 </v-list-tile>
               </v-list>
             </v-flex>
@@ -86,14 +97,18 @@
             "RADIOMAN": "radioman-256-white.png",
         };
 
-        private characterForId() {
+        private mounted() {
+            this.fetchCharacter();
+        }
+
+        private fetchCharacter() {
             axios.get('http://localhost:80/api/v0.1/character/fetch/' + this.characterID)
                 .then( response => {
                     console.log(response);
                     this.characters = [response.data];
                 })
                 .catch(error => {
-                    this.characters = [{}];
+                    this.characters = [{}, {}, {}];
                     console.log(error);
                 });
         }

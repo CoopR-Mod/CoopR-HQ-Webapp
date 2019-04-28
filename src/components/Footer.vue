@@ -13,7 +13,7 @@
           <v-icon class="pt-2" size="2em">fab fa-discord</v-icon>
         </router-link>
       </v-flex>
-      <v-flex xs12 class="pl-2"> alpha-v{{version}}-{{build}} </v-flex>
+      <v-flex xs12 class="pl-2"> alpha-{{build}} </v-flex>
     </v-layout>
   </v-footer>
 
