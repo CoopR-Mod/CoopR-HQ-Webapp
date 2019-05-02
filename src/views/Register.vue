@@ -30,7 +30,9 @@
           ></v-text-field>
         </v-flex>
       </v-layout>
-      <v-btn dark @click="create">Create Account</v-btn>
+      <v-flex xs12 text-xs-center>
+        <v-btn dark @click="create">Create Account</v-btn>
+      </v-flex>
     </v-container>
   </v-form>
 </template>
@@ -52,28 +54,23 @@
         ];
 
         private create() {
-            let creds = JSON.stringify({steamid: this.steamID, password: this.password});
+            let newPlayer = JSON.stringify({steamid: this.steamID, password: this.password});
 
-            axios.post("http://localhost:80/login", creds, {
+            axios.post("http://localhost:80/login", newPlayer, {
                 headers : {
                     'Content-Type' : 'application/json'
                 }
             })
                 .then(response => {
-                    if (response.data.authenticated == true) {
-                        axios.get("http://localhost:80/api/v0.1/player/fetch/" + this.steamID)
-                            .then(response => {
-                                console.log("fetching character");
-                                store.state.user = response.data;
-                            })
-                            .catch(error => {
-                                console.log(error);
-                            });
-                    }
-
+                  if (response.data.created == true) {
+                    console.log("new player created")
+                  } else {
+                    console.error("new player was not created");
+                    console.error("reason: " + response.data.reason);
+                  }
                 })
                 .catch(error => {
-                    console.log(error);
+                    console.error(error);
                 });
         }
     }

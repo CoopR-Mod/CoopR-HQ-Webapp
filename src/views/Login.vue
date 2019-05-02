@@ -30,7 +30,14 @@
           ></v-text-field>
         </v-flex>
       </v-layout>
-      <v-btn dark @click="login">Login</v-btn>
+      <v-layout row wrap>
+        <v-flex xs12 text-xs-center>
+          <v-btn dark @click="login">Login</v-btn>
+        </v-flex>
+        <v-flex xs12 text-xs-center>
+          <v-btn dark to="/register">Create New</v-btn>
+        </v-flex>
+      </v-layout>
     </v-container>
   </v-form>
 </template>
@@ -67,13 +74,13 @@
                                 store.state.user = response.data;
                             })
                             .catch(error => {
-                                console.log(error);
+                                console.error(error);
                             });
                     }
 
                 })
                 .catch(error => {
-                    console.log(error);
+                    console.error(error);
                 });
         }
     }
