@@ -9,6 +9,7 @@ import Loadout from '@/views/Loadout.vue';
 import DiscordChat from '@/views/DiscordChat.vue';
 import NewCharacter from '@/views/NewCharacter.vue';
 import Login from '@/views/Login.vue';
+import Register from '@/views/Register.vue';
 import Store from '@/store';
 
 Vue.use(Router);
@@ -32,6 +33,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login,
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register,
     },
     {
       path: '/userdetails',
