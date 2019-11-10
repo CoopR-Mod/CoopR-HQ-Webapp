@@ -1,0 +1,4 @@
+apiVersion: v1
+description: CoopR HQ Webapp Helm Chart
+name: coopr-hq-webapp
+version: 0.1.0

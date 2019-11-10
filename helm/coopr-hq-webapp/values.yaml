@@ -1,0 +1,10 @@
+# Default values for coopr-hq-webapp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+name: coopr-hq-webapp
+replicaCount: 1
+
+image:
+  repository: eu.gcr.io/coopr-mod/coopr-hq-webapp
+  tag: latest
