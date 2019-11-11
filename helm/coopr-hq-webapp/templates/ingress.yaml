@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: coopr-hq-webapp
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.global-static-ip-name: teamcity-static-ip
 spec:
   rules:
     - http:
