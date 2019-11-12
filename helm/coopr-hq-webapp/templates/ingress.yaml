@@ -4,10 +4,6 @@ kind: Ingress
 metadata:
   name: coopr-hq-webapp
 spec:
-  rules:
-    - http:
-        paths:
-          - path: /coopr-hq
-            backend:
-              serviceName: {{ .Values.name }}
-              servicePort: 80
+    backend:
+      serviceName: {{ .Values.name }}
+      servicePort: 80
