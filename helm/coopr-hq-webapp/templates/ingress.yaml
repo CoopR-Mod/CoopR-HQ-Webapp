@@ -3,8 +3,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: coopr-hq-webapp
-  annotations:
-    kubernetes.io/ingress.global-static-ip-name: teamcity-static-ip
 spec:
   rules:
     - http:
